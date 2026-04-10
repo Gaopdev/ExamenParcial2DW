@@ -1,0 +1,18 @@
+div{
+    margin: 10px;
+    background-color: gray;
+    color: white;
+    border-radius: 7%;
+}
+
+
+div img{
+    height: 100px;
+    width: 100px;
+    border-radius: 7px;
+}
+div span{
+    background-color: yellowgreen;
+    border-radius: 1.5rem;
+    padding: 1rem;
+}

@@ -1,6 +1,6 @@
 import './App.css'
-import { Search } from './components'
-import useDigimon from './hooks/useDigimon'
+import { Search, Card } from './components'
+import { useDigimon } from './hooks'
 
 function App() {
   const { digimon, setFiltro, setNivel } = useDigimon()
@@ -10,6 +10,14 @@ function App() {
     alEscoger={setNivel}
     alEscribir={setFiltro}
     />
+    {digimon.map((p)=>(
+        <Card
+        nombre={p.nombre}
+        imagen={p.imagen}
+        nivel={p.nivel}
+        />
+      ))
+    }
     </>
   )
 }
