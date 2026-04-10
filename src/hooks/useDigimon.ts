@@ -4,6 +4,8 @@ import type { Digimon } from "../types"
 const useDigimon=()=>{
    
     const [digimon,setDigimon]=useState<Digimon[]>([])
+    const [filtro, setFiltro] = useState("")
+    const [nivel, setNivel] = useState("Todos")
 
     const traerDigimon = async()=>{
       try{
@@ -25,8 +27,15 @@ const useDigimon=()=>{
       traerDigimon()
     },[]) 
     
+    const filtratDigimon = digimon.filter((p) => {
+      const filtradoTexto = p.nombre.toLowerCase().includes(filtro.toLowerCase())
+      const filtroNivel = nivel === "Todos" || p.nivel === nivel
+      return filtradoTexto && filtroNivel
+    })
   return{
-    digimon
+    digimon: filtratDigimon,
+    setFiltro,
+    setNivel
   }
 }
 export default useDigimon
