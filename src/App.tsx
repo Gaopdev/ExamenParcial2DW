@@ -10,6 +10,7 @@ function App() {
     alEscoger={setNivel}
     alEscribir={setFiltro}
     />
+    
     </>
   )
 }
